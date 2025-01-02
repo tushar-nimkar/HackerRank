@@ -1,0 +1,47 @@
+# Code performs operation mention in SDTIN
+
+# Input line 4 which is 1 input line indicates no. of inputs
+# 12
+# insert 0 5
+# insert 1 10
+# insert 0 6
+# print
+# remove 6
+# append 9
+# append 1
+# sort
+# print
+# pop
+# reverse
+# print
+
+# Code
+if __name__ == '__main__':
+    N = int(input())
+    working_array=[]
+    for i in range(N):
+        each_line = list(map(str,input().split()))
+        working_array.append(each_line)
+    
+    def format_list(input_list,final_list):
+        
+        if "insert" in input_list:
+            return final_list.insert(int(input_list[1]), int(input_list[2]))
+        if "remove" in input_list:
+            return final_list.remove(int(input_list[1]))
+        if "append" in input_list:
+            return final_list.append(int(input_list[1]))
+        if "print" in input_list:
+            print(final_list)
+            return
+        if "sort" in input_list:
+            return final_list.sort()
+        if "reverse" in input_list:
+            return final_list.reverse()
+        if "pop" in input_list:
+            return final_list.pop()
+
+# Output
+# [6, 5, 10]
+# [1, 5, 9, 10]
+# [9, 5, 1]
