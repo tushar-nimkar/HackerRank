@@ -1,0 +1,32 @@
+# Code receives STDIN and gives output for addition of even nos. in fibonacci series
+
+# Input
+# 2 --> this shows number of test cases
+# 10 --> 1
+# 100 --> 2
+
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    
+    total=0
+    new_fibo=0
+    def fibonacci(previous_1,previous_2):
+        global total
+        global new_fibo
+        if new_fibo<n:
+            new_fibo = previous_1 + previous_2
+            if new_fibo%2==0 and new_fibo<n:
+                total+=new_fibo
+            previous_2=previous_1
+            previous_1=new_fibo
+            fibonacci(previous_1, previous_2)
+    
+        return total
+    print(fibonacci(1,0))
+
+# Output
+# 10
+# 44
+            
+    
