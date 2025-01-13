@@ -1,0 +1,44 @@
+# Code converts text in title case and give alphanumeric text as is
+
+# Description: You are asked to ensure that the first and last names of people begin with a capital letter in their passports. For example, alison heck should be capitalised correctly as Alison Heck.
+
+# Code
+
+import math
+import os
+import random
+import re
+import sys
+# Imports are not required
+
+# Complete the solve function below.
+def solve(s):
+    name_list = list(s.split(" "))
+    new_list=[]
+    for n in name_list:
+        if n.isalpha():
+            new_list.append(n.title())
+        else:
+            new_list.append(n)
+            
+    return " ".join(new_list)
+
+# Following lines writes output in file
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+# Note: in a word only the first character is capitalized. Example 12abc when capitalized remains 12abc
+
+# Input
+# chris alan
+
+# Output
+# Chris Alan
