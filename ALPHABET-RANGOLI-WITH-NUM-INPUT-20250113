@@ -1,0 +1,70 @@
+# Code gives rangoli sort of pattern of alphabets splitting them with "-" it takes only number as input and gives output of alphabet rangoli pattern
+
+def print_rangoli(size):
+    # your code goes here
+    letters= "abcdefghijklmnopqrstuvwxyz"
+    if size%2==0:
+        o=size
+    else:
+        o=size+1
+    m=int(((size*3)-1)/2)
+    new_letter = (letters[:size])[::-1]
+    accum_str = ""
+    list_1=[]
+    for i in range(size):
+        accum_str=new_letter[:i]
+        final_text = accum_str.rjust(m,"-")+new_letter[i]+accum_str[::-1].ljust(m,"-")
+        formatted_text = ("-".join(char for char in final_text))[o:-o]
+        list_1.append(formatted_text)
+    list_2 = list_1 + (list_1[::-1])[1:]
+    print("\n".join(list_2))
+
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+
+# Input
+# 3
+# Output
+# ----c----
+# --c-b-c--
+# c-b-a-b-c
+# --c-b-c--
+# ----c----
+
+# Input
+# 5
+# Output
+# --------e--------
+# ------e-d-e------
+# ----e-d-c-d-e----
+# --e-d-c-b-c-d-e--
+# e-d-c-b-a-b-c-d-e
+# --e-d-c-b-c-d-e--
+# ----e-d-c-d-e----
+# ------e-d-e------
+# --------e--------
+
+# Input
+# 10
+# Output
+# ------------------j------------------
+# ----------------j-i-j----------------
+# --------------j-i-h-i-j--------------
+# ------------j-i-h-g-h-i-j------------
+# ----------j-i-h-g-f-g-h-i-j----------
+# --------j-i-h-g-f-e-f-g-h-i-j--------
+# ------j-i-h-g-f-e-d-e-f-g-h-i-j------
+# ----j-i-h-g-f-e-d-c-d-e-f-g-h-i-j----
+# --j-i-h-g-f-e-d-c-b-c-d-e-f-g-h-i-j--
+# j-i-h-g-f-e-d-c-b-a-b-c-d-e-f-g-h-i-j
+# --j-i-h-g-f-e-d-c-b-c-d-e-f-g-h-i-j--
+# ----j-i-h-g-f-e-d-c-d-e-f-g-h-i-j----
+# ------j-i-h-g-f-e-d-e-f-g-h-i-j------
+# --------j-i-h-g-f-e-f-g-h-i-j--------
+# ----------j-i-h-g-f-g-h-i-j----------
+# ------------j-i-h-g-h-i-j------------
+# --------------j-i-h-i-j--------------
+# ----------------j-i-j----------------
+# ------------------j------------------
