@@ -1,0 +1,26 @@
+# Code creates the design looks like door mat it reads the input from STDIN
+
+t, p=map(int, input().split())
+
+s = int((t-1)/2)
+r=1
+for n in range(s):
+    q=int((p-3)/2)
+    print((".|."*n).rjust(q,"-")+".|."+(".|."*n).ljust(q,"-"))
+print("WELCOME".center(p,'-'))
+for n in range(s-1,-1,-1):
+    q=int((p-3)/2)
+    print((".|."*n).rjust(q,"-")+".|."+(".|."*n).ljust(q,"-"))
+
+# Input
+# 9 27
+# Output
+# ------------.|.------------
+# ---------.|..|..|.---------
+# ------.|..|..|..|..|.------
+# ---.|..|..|..|..|..|..|.---
+# ----------WELCOME----------
+# ---.|..|..|..|..|..|..|.---
+# ------.|..|..|..|..|.------
+# ---------.|..|..|.---------
+# ------------.|.------------
