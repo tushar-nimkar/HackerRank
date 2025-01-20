@@ -1,0 +1,23 @@
+# Code returns count of symmetric differences from 2 list. Program reads input from STDIN
+
+n1 = int(input())
+roll_no_set_1 = set(map(int,input().split()))
+n2 = int(input())
+roll_no_set_2 = set(map(int, input().split()))
+
+print(len(roll_no_set_1.symmetric_difference(roll_no_set_2)))
+
+# Input:
+# 9
+# 1 2 3 4 5 6 7 8 9
+# 9
+# 10 1 2 3 11 21 55 6 8
+
+# Output:
+# 8
+
+Explanation
+
+The roll numbers of students who have subscriptions to English or French newspapers but not both are:
+4, 5, 7, 9, 10, 11, 21 and 55.
+Hence, the total is 8 students.
