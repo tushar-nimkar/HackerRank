@@ -1,0 +1,28 @@
+# Code returns winner of the game where it found substrings and separate those substrings based on vowels and consonent. It reads input from STDIN.
+
+def minion_game(string):
+    # your code goes here
+    stuart_score=0
+    kevin_score=0
+    n=len(s)
+    for pos in range(n):
+        if s[pos] in "AEIOU":
+            kevin_score+=(n-pos)
+        else:
+            stuart_score+=(n-pos)
+    if kevin_score>stuart_score:
+        print(f"Kevin {kevin_score}")
+    elif kevin_score==stuart_score:
+        print("Draw")
+    else:
+        print(f"Stuart {stuart_score}")
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+
+# Sample Input
+# BANANA
+
+# Sample Output
+# Stuart 12
