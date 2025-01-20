@@ -1,0 +1,33 @@
+# Code performs the operation menitoned in input gives sum of remaining in set. Program reads input from STDIN
+
+n = int(input())
+s = set(map(int, input().split()))
+j = int(input())
+
+for n in range(j):
+    oper = list(map(str,input().split()))
+    if oper[0] == 'pop':
+        s.pop()
+    if oper[0] == 'remove':
+        s.remove(int(oper[1]))
+    if oper[0] == 'discard':
+        s.discard(int(oper[1]))
+print(sum(s))
+
+# Input:
+# 9 --> number of s count
+# 1 2 3 4 5 6 7 8 9 --> count of these numbers is what above number refers to
+# 10 --> number of operations as in below
+# pop
+# remove 9
+# discard 9
+# discard 8
+# remove 7
+# pop 
+# discard 6
+# remove 5
+# pop 
+# discard 5
+
+# Output:
+# 4
