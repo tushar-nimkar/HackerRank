@@ -1,0 +1,19 @@
+# Code returns the sub string which are splitted as input no. in variable k and keep uniques character in ordered form. Program reads input from STDIN
+
+def merge_the_tools(string, k):
+    # your code goes here
+    for n in range(0, len(string),k):
+        print("".join(dict.fromkeys(string[n:n+k])))
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
+
+# Input:
+# AABCAAADA
+# 3
+
+# Output:
+# AB
+# CA
+# AD
