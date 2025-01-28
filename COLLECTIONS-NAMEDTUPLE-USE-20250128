@@ -1,0 +1,53 @@
+# Code use the collections namedtuple to five out avg. Program reads input from STDIN
+
+# Task
+
+# Dr. John Wesley has a spreadsheet containing a list of student's ID, MARKS, NAME and CLASS.
+
+# Your task is to help Dr. Wesley calculate the average marks of the students.
+
+# Note:
+# 1. Columns can be in any order. IDs, marks, class and name can be written in any order in the spreadsheet.
+# 2. Column names are ID, MARKS, CLASS and NAME. (The spelling and case type of these names won't change.)
+
+# Input Format
+# The first line contains an integer N, the total number of students.
+# The second line contains the names of the columns in any order.
+# The next N lines contains the ID, MARKS, NAME and CLASS. under their respective column names.
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import namedtuple
+number_of_entries = int(input())
+entries = namedtuple('entries', input().split())
+sum_of_marks=0
+for entry in range(number_of_entries):
+    in_data = tuple(input().split())
+    e = entries(in_data[0], in_data[1], in_data[2], in_data[3])
+    sum_of_marks += int(e.MARKS)
+
+avg=sum_of_marks/number_of_entries
+print(avg)
+
+# Sample Input: 1
+# 5
+# ID         MARKS      NAME       CLASS     
+# 1          97         Raymond    7         
+# 2          50         Steven     4         
+# 3          91         Adrian     9         
+# 4          72         Stewart    5         
+# 5          80         Peter      6 
+
+# Sample Output
+# 78.00
+
+# Sample Input: 2
+# 5
+# MARKS      CLASS      NAME       ID
+# 92         2          Calum      1         
+# 82         5          Scott      2         
+# 94         2          Jason      3         
+# 55         8          Glenn      4         
+# 82         2          Fergus     5
+
+# Sample Output:
+# 81.00
